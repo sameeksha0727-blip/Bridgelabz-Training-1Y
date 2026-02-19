@@ -1,23 +1,21 @@
-package ridehailing;
+package vehiclerental;
 
-public class Car extends Vehicle implements GPS {
+public class Car extends Vehicle implements Insurable {
 
-    private String location;
-
-    public Car(int id, String driver, double rate) {
-        super(id, driver, rate);
+    public Car(String number, double rate) {
+        super(number, "Car", rate);
     }
 
-    public double calculateFare(double distance) {
-        return distance * getRatePerKm();
+    public double calculateRentalCost(int days) {
+        return getRentalRate() * days;
     }
 
-    public String getCurrentLocation() {
-        return location;
+    public double calculateInsurance() {
+        return 500;
     }
 
-    public void updateLocation(String location) {
-        this.location = location;
+    public String getInsuranceDetails() {
+        return "Car Insurance Included";
     }
 }
 

@@ -1,21 +1,25 @@
-package ridehailing;
+package vehiclerental;
 
 public abstract class Vehicle {
-    private int vehicleId;
-    private String driverName;
-    private double ratePerKm;
+    private String vehicleNumber;
+    private String type;
+    private double rentalRate;
 
-    public Vehicle(int vehicleId, String driverName, double ratePerKm) {
-        this.vehicleId = vehicleId;
-        this.driverName = driverName;
-        this.ratePerKm = ratePerKm;
+    public Vehicle(String vehicleNumber, String type, double rentalRate) {
+        this.vehicleNumber = vehicleNumber;
+        this.type = type;
+        setRentalRate(rentalRate);
     }
 
-    public double getRatePerKm() { return ratePerKm; }
+    public String getVehicleNumber() { return vehicleNumber; }
+    public String getType() { return type; }
+    public double getRentalRate() { return rentalRate; }
 
-    public abstract double calculateFare(double distance);
-
-    public void getVehicleDetails() {
-        System.out.println("Driver: " + driverName);
+    public void setRentalRate(double rentalRate) {
+        if (rentalRate > 0)
+            this.rentalRate = rentalRate;
     }
+
+    public abstract double calculateRentalCost(int days);
 }
+

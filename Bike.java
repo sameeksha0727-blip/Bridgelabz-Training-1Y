@@ -1,13 +1,13 @@
-package ridehailing;
+package vehiclerental;
 
 public class Bike extends Vehicle {
 
-    public Bike(int id, String driver, double rate) {
-        super(id, driver, rate);
+    public Bike(String number, double rate) {
+        super(number, "Bike", rate);
     }
 
-    public double calculateFare(double distance) {
-        return distance * getRatePerKm();
+    public double calculateRentalCost(int days) {
+        return getRentalRate() * days;
     }
 }
 
