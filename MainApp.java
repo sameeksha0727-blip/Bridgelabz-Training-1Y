@@ -1,14 +1,10 @@
-package question1;
+package question2;
 
-import college.student.Student;
-import college.faculty.Faculty;
+import com.university.department.cse.Course;
 
 public class MainApp {
     public static void main(String[] args) {
-        Student s = new Student("Suhani", 101);
-        Faculty f = new Faculty("Dr. Sharma", "Java");
-
-        s.displayStudent();
-        f.displayFaculty();
+        Course c = new Course();
+        c.displayCourse();
     }
 }
