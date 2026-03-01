@@ -1,10 +1,8 @@
-package question2;
-
-import com.university.department.cse.Course;
+import college.student.Student;
 
 public class MainApp {
     public static void main(String[] args) {
-        Course c = new Course();
-        c.displayCourse();
+        Student s = new Student();
+        s.show();
     }
 }
