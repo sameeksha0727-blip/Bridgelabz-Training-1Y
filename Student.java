@@ -1,42 +1,15 @@
-package com.school.data;
+package college.student;
 
 public class Student {
-
     private String name;
-    private int marks1;
-    private int marks2;
-    private int marks3;
+    private int rollNo;
 
-    public Student(String name, int marks1, int marks2, int marks3) {
+    public Student(String name, int rollNo) {
         this.name = name;
-        this.marks1 = marks1;
-        this.marks2 = marks2;
-        this.marks3 = marks3;
+        this.rollNo = rollNo;
     }
 
-    // Getters
-    public String getName() {
-        return name;
-    }
-
-    public int getMarks1() {
-        return marks1;
-    }
-
-    public int getMarks2() {
-        return marks2;
-    }
-
-    public int getMarks3() {
-        return marks3;
-    }
-
-    // toString() method
-    @Override
-    public String toString() {
-        return "Student Name: " + name +
-                "\nMarks 1: " + marks1 +
-                "\nMarks 2: " + marks2 +
-                "\nMarks 3: " + marks3;
+    public void display() {
+        System.out.println("Student: " + name + ", Roll No: " + rollNo);
     }
 }

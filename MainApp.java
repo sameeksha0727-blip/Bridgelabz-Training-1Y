@@ -1,14 +1,19 @@
-import com.company.analytics.sales.SalesReport;
-import com.company.analytics.hr.EmployeeReport;
+package college.main;
+
+import college.student.Student;
+import college.faculty.Faculty;
+import college.department.Department;
 
 public class MainApp {
     public static void main(String[] args) {
 
-        SalesReport s = new SalesReport();
-        EmployeeReport e = new EmployeeReport();
+        Student s = new Student("Suhani", 101);
+        Faculty f = new Faculty("Dr. Mehta", "Data Structures");
+        Department d = new Department("Computer Science");
 
-        System.out.println("---- Company Combined Report ----");
-        s.printSales();
-        e.printEmployeeData();
+        System.out.println("---- College Information ----");
+        s.display();
+        f.display();
+        d.display();
     }
 }

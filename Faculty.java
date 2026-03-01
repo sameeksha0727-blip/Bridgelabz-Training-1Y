@@ -9,8 +9,7 @@ public class Faculty {
         this.subject = subject;
     }
 
-    public void displayFaculty() {
-        System.out.println("Faculty Name: " + name);
-        System.out.println("Subject: " + subject);
+    public void display() {
+        System.out.println("Faculty: " + name + ", Subject: " + subject);
     }
 }
