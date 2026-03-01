@@ -1,17 +1,16 @@
-package question5;
+package com.company.main;
 
-import library.books.*;
-import library.members.*;
-import library.transactions.*;
+import com.company.hr.*;
+import com.company.payroll.Payroll;
 
 public class MainApp {
     public static void main(String[] args) {
-        Book b = new Book("Java Programming");
-        Member m = new Member("Suhani");
-        Transaction t = new Transaction();
+        Employee e = new Employee(1, "Suhani", "HR", 50000);
+        Payroll p = new Payroll();
 
-        b.display();
-        m.display();
-        t.issueBook(b, m);
+        e.display();
+        p.calculateBonus(e);
+        System.out.println("After Bonus:");
+        e.display();
     }
 }

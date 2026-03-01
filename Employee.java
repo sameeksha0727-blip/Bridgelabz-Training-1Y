@@ -1,30 +1,22 @@
-package com.gla.level1;
+package com.company.hr;
 
 public class Employee {
+    private int id;
+    private String name;
+    private String department;
+    private double salary;
 
-    // Attributes
-    String name;
-    int id;
-    double salary;
-
-    // Constructor
-    public Employee(String name, int id, double salary) {
-        this.name = name;
+    public Employee(int id, String name, String dept, double salary) {
         this.id = id;
+        this.name = name;
+        this.department = dept;
         this.salary = salary;
     }
 
-    // Method to display details
-    public void displayDetails() {
-        System.out.println("Employee Name: " + name);
-        System.out.println("Employee ID: " + id);
-        System.out.println("Employee Salary: " + salary);
-    }
+    public double getSalary() { return salary; }
+    public void setSalary(double salary) { this.salary = salary; }
 
-    // Main Method
-    public static void main(String[] args) {
-        Employee emp1 = new Employee("Suhani", 101, 50000);
-        emp1.displayDetails();
+    public void display() {
+        System.out.println(id + " " + name + " " + department + " " + salary);
     }
 }
-
