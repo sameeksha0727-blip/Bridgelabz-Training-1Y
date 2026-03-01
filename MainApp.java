@@ -1,22 +1,17 @@
-package com.school.main;
+package question8;
 
-import com.school.data.*;
-import com.school.util.*;
+import com.bank.util.InterestCalculator;
 
 public class MainApp {
-
     public static void main(String[] args) {
 
-        Student s1 = new Student("Suhani", 85, 78, 92);
+        InterestCalculator calc = new InterestCalculator();
 
-        Analyzer analyzer = new Analyzer();
+        double SI = calc.calculateSimpleInterest(10000, 5, 2);
+        double CI = calc.calculateCompoundInterest(10000, 5, 2);
 
-        double avg = analyzer.calculateAverage(s1);
-        String grade = analyzer.findGrade(avg);
-
-        System.out.println("---- Student Performance Report ----");
-        System.out.println(s1);   // calls toString()
-        System.out.println("Average: " + avg);
-        System.out.println("Grade: " + grade);
+        System.out.println("Simple Interest: " + SI);
+        System.out.println("Compound Interest: " + CI);
     }
 }
+
