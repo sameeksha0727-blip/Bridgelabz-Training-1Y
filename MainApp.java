@@ -1,16 +1,22 @@
-package com.company.main;
+package com.school.main;
 
-import com.company.hr.*;
-import com.company.payroll.Payroll;
+import com.school.data.*;
+import com.school.util.*;
 
 public class MainApp {
-    public static void main(String[] args) {
-        Employee e = new Employee(1, "Suhani", "HR", 50000);
-        Payroll p = new Payroll();
 
-        e.display();
-        p.calculateBonus(e);
-        System.out.println("After Bonus:");
-        e.display();
+    public static void main(String[] args) {
+
+        Student s1 = new Student("Suhani", 85, 78, 92);
+
+        Analyzer analyzer = new Analyzer();
+
+        double avg = analyzer.calculateAverage(s1);
+        String grade = analyzer.findGrade(avg);
+
+        System.out.println("---- Student Performance Report ----");
+        System.out.println(s1);   // calls toString()
+        System.out.println("Average: " + avg);
+        System.out.println("Grade: " + grade);
     }
 }
