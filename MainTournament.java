@@ -1,21 +1,21 @@
-package Package2.Collections.OnlineGamingTournamentTracker;
+package Package2.Collections.SportsTournamentScheduler;
 
 public class MainTournament {
     public static void main(String[] args) {
 
         TournamentSystem system = new TournamentSystem();
 
-        Player p1 = new Player(1, "Aman");
-        Player p2 = new Player(2, "Riya");
-        Player p3 = new Player(3, "Raj");
+        Team t1 = new Team(1, "Team A");
+        Team t2 = new Team(2, "Team B");
+        Team t3 = new Team(3, "Team C");
 
-        system.registerPlayer(p1);
-        system.registerPlayer(p2);
-        system.registerPlayer(p3);
-        system.registerPlayer(p1);
+        system.registerTeam(t1);
+        system.registerTeam(t2);
+        system.registerTeam(t3);
+        system.registerTeam(t1);
 
-        system.scheduleMatch(new Match(p1, p2));
-        system.scheduleMatch(new Match(p2, p3));
+        system.scheduleMatch(new Match(t1, t2));
+        system.scheduleMatch(new Match(t2, t3));
 
         system.processMatches();
         system.showLeaderboard();

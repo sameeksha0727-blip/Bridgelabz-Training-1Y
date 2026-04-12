@@ -1,19 +1,19 @@
-package Package2.Collections.OnlineGamingTournamentTracker;
+package Package2.Collections.SportsTournamentScheduler;
 
 import java.util.*;
 
 public class TournamentSystem {
 
-    Set<Player> players = new HashSet<>();
+    Set<Team> teams = new HashSet<>();
     Queue<Match> matchQueue = new LinkedList<>();
     List<Result> results = new ArrayList<>();
-    TreeSet<Score> leaderboard = new TreeSet<>();
+    TreeSet<Team> leaderboard = new TreeSet<>();
 
-    public void registerPlayer(Player p) {
-        if (players.add(p)) {
-            leaderboard.add(new Score(p, 0));
+    public void registerTeam(Team t) {
+        if (teams.add(t)) {
+            leaderboard.add(t);
         } else {
-            System.out.println("Duplicate player: " + p);
+            System.out.println("Duplicate team: " + t.name);
         }
     }
 
@@ -27,37 +27,27 @@ public class TournamentSystem {
         while (!matchQueue.isEmpty()) {
             Match m = matchQueue.poll();
 
-            Player winner = Math.random() > 0.5 ? m.p1 : m.p2;
+            Team winner = Math.random() > 0.5 ? m.t1 : m.t2;
 
-            Result r = new Result(m, winner);
-            results.add(r);
+            winner.points += 10;
 
-            updateScore(winner);
+            results.add(new Result(m, winner));
 
-            System.out.println(r);
+            System.out.println(m + " -> Winner: " + winner.name);
         }
+
+        updateLeaderboard();
     }
 
-    private void updateScore(Player winner) {
-        Score target = null;
-
-        for (Score s : leaderboard) {
-            if (s.player.equals(winner)) {
-                target = s;
-                break;
-            }
-        }
-
-        if (target != null) {
-            leaderboard.remove(target);
-            leaderboard.add(new Score(winner, target.points + 10));
-        }
+    private void updateLeaderboard() {
+        leaderboard.clear();
+        leaderboard.addAll(teams);
     }
 
     public void showLeaderboard() {
         System.out.println("\nLeaderboard:");
-        for (Score s : leaderboard) {
-            System.out.println(s);
+        for (Team t : leaderboard) {
+            System.out.println(t);
         }
     }
 }
