@@ -1,34 +1,18 @@
-package Package1.Generics;
+package Package2.Collections.InventoryandRestockManagementSystem;
 
-import java.util.*;
-
-class Product {
+public class Product {
+    String name;
     double price;
+    int stock;
 
-    public double getPrice() {
-        return price;
-    }
-}
-
-class Mobile extends Product {
-    Mobile(double price) { this.price = price; }
-}
-
-class Laptop extends Product {
-    Laptop(double price) { this.price = price; }
-}
-
-class PriceCalculator {
-    public static double calculateTotal(List<? extends Product> items) {
-        double sum = 0;
-        for (Product p : items) {
-            sum += p.getPrice();
-        }
-        return sum;
+    public Product(String name, double price, int stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
     }
 
-    public static void main(String[] args) {
-        List<Mobile> mobiles = Arrays.asList(new Mobile(10000), new Mobile(20000));
-        System.out.println(calculateTotal(mobiles));
+    @Override
+    public String toString() {
+        return name + " | ₹" + price + " | Stock: " + stock;
     }
 }
